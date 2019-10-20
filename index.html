@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
+<head>
+	<title></title>
+	<style type="text/css">
+		html{font-family: 'Modak', cursive;}
+		.circle {width: 10px; 
+				height: 50px;
+				float: left; 
+				opacity: 0.7;
+			 	background-color: gray; 
+				border-radius: 50%;
+				margin-top: 10px;}
+		.circle :hover{opacity: 1; background: black;}
+		
+		body{background-color: white;}
+		.rain{width: 10px;
+				height: 10px;
+				background:black;
+				position: absolute; 
+				border-radius: 50%;
+				animation: rr 1s infinite ease-in;
+				opacity: 0.5}
+
+		.rain2{width: 0.3px;
+				height: 3px;
+				background:black;
+				position: absolute; 
+				animation: rr 5s infinite ease-in;}
+		
+		
+		@keyframes rr{
+			from{bottom: 0px;}
+			to{bottom: 800px;}
+		}
+	
+		.box{height: 100px;
+			background-color: black;}
+		
+		.po{position: absolute;
+			border-radius: 50%;
+			opacity: 0.5;
+			background-color: black;}
+		
+		.c {width: 100px; 
+			height: 100px;}
+
+		@keyframes cc {
+			from{top: -100px;}
+			to{top:450px;}
+		}
+		@keyframes ccc {
+			from{top: -100px;}
+			to{top:350px;}
+		}
+		@keyframes a {
+			from{top: -50px;}
+			to{top:-150px;}
+		}
+		@keyframes aa {
+			from{top: -50px;}
+			to{top:800px;}
+		}
+		
+		.c1{width: 400px;
+			height: 400px;
+			left:-100px;}
+		.c2{width: 800px;
+			height: 800px;
+			left:-100px;}
+
+
+
+		.p{animation: forwards cc 2s;}
+		.p1{animation: forwards cc 3s;}
+		.p2{animation: forwards cc 1s;}
+		.p3{animation: forwards ccc 1s;}
+
+		.b{animation: forwards a 1s;}
+		.bb{animation: forwards aa 1s;}
+
+		p{font-size: 30px;}
+
+		.bottom{position: absolute;
+				height: 250px; 
+				background-color: black;
+				width: 1500px;
+				top:1000px;}
+		#monitor{position: fixed; 
+					background-color: black; 
+					top: 0; 
+					right: 0; 
+					width: 70px;
+					height: 70px; 
+					padding: 5px; 
+					color: white;
+					opacity: 0;}
+		#turtle{position: absolute;
+				top: 800px; 
+				left: 100px;}
+
+		#end{position: absolute;
+			top: 710px; 
+			color: white; 
+			left: 650px;
+			font-size: 200px;
+			animation: infinite ee 4.9s;}
+		
+		@keyframes ee{
+			from{color: white;
+					opacity: 0.5;}
+			to{color: yellow;
+				opacity:1;}
+		}
+
+
+
+
+
+		
+		
+	</style>
+<body id="body">
+	<audio src="iii.mp3" loop id="yy" >
+	</audio>
+
+	<div id="monitor"></div>
+	<div class="box"></div>
+	<div class="circle" id="cir">
+		<p style="color:yellow;">-</p>
+	</div>
+	
+	<div class="rain" id="tt">
+		<p style="color:yellow;">-</p>
+	</div>
+	
+	<div id="cir3">
+	<div class="c po p" 
+		style="left:500px;"></div>
+	<div class="c1 po p1"></div>
+	<div class="c po p1"></div>
+	<div class="c2 po p2" 
+		style="left:500px;"></div>
+	<div class="c po p3" 
+		style="left:900px;"></div>
+	<div class="c1 po p3" 
+		style="left:800px; opacity: 0.6;"></div>
+
+	<div class="c1 po b" 
+		style="left:80px;"></div>
+	</div>
+
+	<div class="c1 po bb " 
+		style="left:200px;"></div>
+	</div>
+		
+
+	<div class="circle" id="cir2" style="margin-top: 10px;">
+		<p style="color:yellow;">-</p>
+	</div>
+
+	<div class="rain2" id="ttt">
+		<p style="color:black;">o</p>
+		<p style="color:yellow">o</p>
+	</div>
+
+	<div class="bottom" id="bo"></div>
+
+	<img src="4.gif" id="turtle">
+
+	<p id="end">END</p>
+	 
+
+
+
+
+
+	
+	
+	
+	<script type="text/javascript">
+
+		for (var i=0; i<800; i++){
+			var b = cir.cloneNode(true);
+			b.id = i;
+			b.style.width = Math.random()*10 + "px";
+			b.style.background = makeColor();
+			b.onmouseover=function(e){
+				e.target.style.width = "30px";
+			}
+			document.body.appendChild(b);
+		}
+
+		for (var i=0; i<400; i++){
+			var b = cir2.cloneNode(true);
+			b.id = i;
+			b.style.width = Math.random()*10 + "px";
+			b.style.background = makeColor();
+			b.onmouseover=function(e){
+				e.target.style.width = "30px";
+			}
+			document.body.appendChild(b);
+		}
+
+		for(var i=0; i<50; i++){
+			var b = tt.cloneNode(true);
+			b.id = i;
+			b.className = "rain";
+			b.style.left = Math.random()*window.innerWidth + "px";
+			b.style.background = makeColor();
+			b.style.animationDelay = 0.1*i + "s";
+			document.body.appendChild(b);
+		}
+
+		for(var i=0; i<20; i++){
+			var b = ttt.cloneNode(true);
+			b.id = i;
+			b.className = "rain2";
+			b.style.right = Math.random()*window.innerWidth + "px";
+			b.style.animationDuration = Math.random() + "s";
+			b.style.height = Math.random()*window.innerHeight + "px";
+			b.style.background = makeColor();
+			b.style.animationDelay = 0.1*i + "s";
+			document.body.appendChild(b);
+		}
+		
+
+		function makeColor(){
+			var rr = Math.random()*29;
+			var gg = Math.random()*26;
+			var bb = Math.random()*26;
+			var tt = "rgb(" + rr + "," + gg + "," + bb + ")";
+			return tt;
+		}
+
+		window.onscroll = function(){
+		var t = document.documentElement.scrollTop + document.body.scrollTop;
+			monitor.innerHTML = t.toFixed(1);
+			if (200 < t) { bo.style.height = "1500px";}
+			if (200 < t) { bo.style.top = "0px";}
+			if (200 < t) { turtle.style.opacity= "1";}
+		}
+		var bodystate = "off";
+				body.onclick = function(){
+				if (bodystate == "off") {	
+				body.style.opacity = "1";
+				yy.play();
+				bodystate = "on";
+				}else{
+				body.style.opacity = "0.5";
+				yy.pause();
+				bodystate = "off";
+				}
+			}
+		
+
+		
+		
+			
+
+
+
+	</script>
+	
+
+</body>
+</html>
